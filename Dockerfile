@@ -4,6 +4,6 @@ WORKDIR /root
 RUN apk --no-cache add lapack libstdc++ \
 	&& apk --no-cache add --virtual .builddeps g++ gcc gfortran musl-dev lapack-dev \
 	&& pip install --upgrade pip \
-	&& pip install scipy \
+	&& pip install scipy numpy scikit-learn \
 	&& apk del .builddeps \
 	&& rm -rf /root/.cache
