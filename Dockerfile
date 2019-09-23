@@ -1,9 +1,9 @@
 FROM python:3.6.5-alpine3.7
 
 WORKDIR /root
-RUN apk --no-cache add lapack libstdc++ py3-lxml py3-numpy cython \
-	&& apk --no-cache add --virtual .builddeps g++ gcc gfortran musl-dev lapack-dev \
+RUN apk --no-cache add lapack libstdc++ \
+	&& apk --no-cache add --virtual .builddeps g++ gcc gfortran musl-dev lapack-dev libxml2-dev libxslt-dev \
 	&& pip install --upgrade pip \
-	&& python3 -mpip install scipy scikit-learn \
+	&& python3 -mpip install lxml cython numpy scipy scikit-learn \
 	&& apk del .builddeps \
 	&& rm -rf /root/.cache
