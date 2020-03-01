@@ -1,4 +1,4 @@
-FROM python:3.6.5-alpine3.7
+FROM python:3.6.10-alpine3.11
 
 WORKDIR /root
 RUN apk --no-cache add lapack libstdc++ \
