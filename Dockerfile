@@ -1,4 +1,4 @@
-FROM python:3.6.10-slim
+FROM python:3.8-slim
 
 WORKDIR /root
 RUN pip install --upgrade pip \
